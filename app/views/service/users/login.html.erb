@@ -1,0 +1,60 @@
+<script src="//static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+<%= javascript_include_tag    'auth', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag    'login', 'data-turbolinks-track': 'reload' %>
+
+<div class="login-container">
+  <div class="container">
+    <div class="title">LOGIN</div>
+    <div class="login-form">
+      <div class="form-group">
+        <%= text_field_tag :id, '', placeholder: '이메일을 입력하세요', class: 'inp' %>
+      </div>
+      <div class="form-group">
+        <%= password_field_tag :password, '', placeholder: '비밀번호를 입력하세요', class: 'inp' %>
+      </div>
+
+      <div class="form-group clearfix keep">
+        <div class="box" id="keep"></div>
+        <div class="txt">로그인 상태 유지</div>
+      </div>
+
+      <div class="btn-container">로그인하기</div>
+
+      <div class="link-container">
+        <%= link_to '/landing_signup' do %>
+          <span class="li a">회원가입 하기</span>
+        <% end %>
+        <%= link_to '/search_password' do %>
+          <span class="li">비밀번호 찾기</span>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="sns-login">
+      <p class="sub-title">SNS LOGIN</p>
+      <ul class="list">
+        <li class="item clearfix google" data-type="google" id="g-signin2">
+          <div class="icon"></div>
+          <div class="txt">구글로 시작하기</div>
+        </li>
+        <% if Rails.env.alpha? || Rails.env.development? %>
+          <li class="item clearfix facebook" data-type="facebook">
+            <div class="icon"></div>
+            <div class="txt">페이스북으로 시작하기</div>
+          </li>
+        <% end %>
+        <li class="item clearfix kakao" data-type="kakao">
+          <div class="icon"></div>
+          <div class="txt">카카오로 시작하기</div>
+        </li>
+        <% if Rails.env.alpha? || Rails.env.development? %>
+          <li class="item clearfix naver" data-type="naver">
+            <div class="icon"></div>
+            <div class="txt">네이버로 시작하기</div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+  </div>
+</div>

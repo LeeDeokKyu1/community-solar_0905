@@ -1,0 +1,460 @@
+@import "../lib/util";
+
+.signup-container {
+
+  .container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 120px 0;
+    background-image: image-url('service/commons/img-signup.svg');
+    background-size: 200px 150px;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+
+    .title {
+      height: 49px;
+      line-height: 49px;
+      font-size: 40px;
+      letter-spacing: 1px;
+      color: #222;
+    }
+
+    .form-container {
+      margin-top: 60px;
+
+      .form-group {
+        margin-top: 30px;
+
+        &.confirm-group {
+          margin-top: 10px;
+
+          .request-confirm-btn {
+            cursor: pointer;
+            height: 66px;
+            line-height: 66px;
+            border-radius: 8px;
+            border: solid 1px #222;
+            background-color: #fff;
+
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            color: #222;
+          }
+
+          .confirm-code-container {
+            .confirm-code {
+              float: left;
+              width: 280px;
+            }
+
+            .resend-btn {
+              float: left;
+              width: 108px;
+              height: 64px;
+              line-height: 64px;
+              border-radius: 8px;
+              border: solid 1px #222;
+              background-color: #fff;
+
+              font-size: 14px;
+              font-weight: bold;
+              text-align: center;
+              color: #222;
+              margin: 0 0 0 10px;
+            }
+
+            .confirm-result {
+              height: 14px;
+              font-size: 12px;
+              font-weight: bold;
+              color: #4c5fc1;
+
+              margin: 12px 0 30px;
+
+              &.warn {
+                color: #f42e0a;
+              }
+            }
+
+            .confirm-btn {
+              height: 66px;
+              line-height: 66px;
+              border-radius: 8px;
+              background-color: #4c5fc1;
+
+              font-size: 14px;
+              font-weight: bold;
+              text-align: center;
+              color: #fff;
+
+              &.verified {
+                background-color: #999;
+              }
+            }
+          }
+        }
+
+        .label {
+          display: inline-block;
+          width: 300px;
+          height: 26px;
+          line-height: 26px;
+          font-size: 13px;
+          color: #666666;
+
+          &.require:after {
+            margin-left: 4px;
+            content: '*';
+            color: #3fc0a7;
+          }
+        }
+
+        .inp {
+          margin-top: 10px;
+          height: 26px;
+          border: 0;
+          border-radius: 8px;
+          background-color: #f2f2f2;
+          padding: 20px 26px;
+          width: 348px;
+          display: block;
+          font-size: 14px;
+
+          &.half {
+            float: left;
+            width: 28%;
+          }
+
+          &.warn {
+            border: 1px solid #f42e0a;
+          }
+        }
+
+        .sub {
+          float:left;
+          line-height:65px;
+          margin: 10px 10px 0;
+        }
+
+        .warning {
+          display: none;
+          margin: 12px 0 0;
+          height: 14px;
+          font-size: 12px;
+          font-weight: bold;
+          color: #f42e0a;
+
+          &.active {
+            display: block;
+          }
+        }
+      }
+
+      .terms-container {
+        margin-top: 62px;
+
+        .terms {
+          margin: 17px 0;
+          height: 21px;
+          line-height: 21px;
+
+          .box {
+            width: 21px;
+            height: 21px;
+            border-radius: 4px;
+            background-color: #f2f2f2;
+            float: left;
+
+            &.active {
+              background-image: image-url("service/commons/checkbox-sel.svg");
+              background-size: contain;
+              background-repeat: no-repeat;
+            }
+          }
+
+          .txt {
+            margin-left: 10px;
+            letter-spacing: -0.7px;
+            float: left;
+
+            font-size: 12px;
+            color: #666;
+
+            a {
+              color: #3fc0a7;
+            }
+          }
+        }
+      }
+
+      .btn-wrapper {
+        margin: 105px auto 0;
+        width: 300px;
+        height: 66px;
+        line-height: 66px;
+        border-radius: 12px;
+        box-shadow: 0 10px 20px 0 rgba(34, 34, 34, 0.2);
+        background-color: #222222;
+
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        color: #fff;
+
+        cursor: pointer;
+      }
+    }
+  }
+
+  @include respond-to(mobile) {
+
+    .container {
+      padding: 16.25vw 0 25vw;
+      background-image: image-url('service/commons/img-signup.svg');
+      background-size: 37.5vw 28.125vw;
+      background-position: 50% 0;
+      background-repeat: no-repeat;
+
+      width: 81.25vw;
+      margin: 0 auto;
+
+      .title {
+        height: 10vw;
+        line-height: 10vw;
+        font-size: 8.125vw;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: #222;
+      }
+
+      .form-container {
+        margin-top: 12.5vw;
+
+        .form-group {
+          margin-top: 9.375vw;
+
+          &.confirm-group {
+            margin-top: 2.5vw;
+
+            .request-confirm-btn {
+              cursor: pointer;
+              height: 14.0625vw;
+              line-height: 14.0625vw;
+              border-radius: 2.5vw;
+              border: solid 1px #222;
+              background-color: #fff;
+
+              font-size: 3.4375vw;
+              font-weight: bold;
+              text-align: center;
+              color: #222;
+            }
+
+            .confirm-code-container {
+              .confirm-code {
+                float: left;
+                width: 42.1875vw;
+              }
+
+              .resend-btn {
+                float: left;
+                width: 26.5625vw;
+                height: 13.4375vw;
+                line-height: 13.4375vw;
+                border-radius: 2.5vw;
+                border: solid 1px #222;
+                background-color: #fff;
+
+                font-size: 3.4375vw;
+                font-weight: bold;
+                text-align: center;
+                color: #222;
+                margin: 3.125vw 0 0 1.875vw;
+              }
+
+              .confirm-result {
+                height: 3.125vw;
+                font-size: 2.8125vw;
+                font-weight: bold;
+                color: #4c5fc1;
+
+                margin: 1.875vw 0 6.25vw;
+
+                &.warn {
+                  color: #f42e0a;
+                }
+              }
+
+              .confirm-btn {
+                height: 13.4375vw;
+                line-height: 13.4375vw;
+                border-radius: 2.5vw;
+                background-color: #4c5fc1;
+
+                font-size: 3.4375vw;
+                font-weight: bold;
+                text-align: center;
+                color: #fff;
+
+                &.verified {
+                  background-color: #999;
+                }
+              }
+            }
+          }
+
+          .label {
+            display: inline-block;
+            width: 81.25vw;
+            height: 4.0625vw;
+            line-height: 4.0625vw;
+            font-size: 3.4375vw;
+            color: #666666;
+
+            &.require:after {
+              margin-left: 0.625vw;
+              content: '*';
+              color: #3fc0a7;
+            }
+          }
+
+          .inp {
+            margin-top: 3.125vw;
+            height: 4.6875vw;
+            border: 0;
+            border-radius: 8px;
+            background-color: #f2f2f2;
+            padding: 4.6875vw;
+            width: 71.875vw;
+            display: block;
+            font-size: 4.0625vw;
+
+            &.half {
+              width: 25%;
+            }
+
+            &.warn {
+              border: 1px solid #f42e0a;
+            }
+
+            &.phone {
+              width: 14.375vw;
+              display: block;
+              float: left;
+            }
+
+            &.email {
+              width: 27.8125vw;
+              display: block;
+              float: left;
+            }
+          }
+
+          .sub {
+            line-height:45px;
+          }
+
+          .phone-dash {
+            width: 1.875vw;
+            float: left;
+            margin: 3.125vw 1.5625vw 0;
+            height: 14.0625vw;
+            line-height: 14.0625vw;
+            font-size: 4.0625vw;
+            color: #222;
+            text-align: center;
+          }
+
+          .email-at {
+            float: left;
+            width: 3.75vw;
+            margin: 3.125vw 1.5625vw 0;
+            height: 14.0625vw;
+            line-height: 14.0625vw;
+            font-size: 4.0625vw;
+            color: #222;
+            text-align: center;
+          }
+
+          .domain {
+            float: left;
+            width: 30vw;
+
+            span {
+              width: 24.0625vw;
+              height: 4.6875vw;
+            }
+          }
+
+          .email-custom {
+            width: 27.8125vw;
+            display: block;
+            float: left;
+          }
+
+          .warning {
+            display: none;
+            margin: 1.875vw 0 0;
+            height: 3.125vw;
+            font-size: 2.8125vw;
+            font-weight: bold;
+            color: #f42e0a;
+
+            &.active {
+              display: block;
+            }
+          }
+        }
+
+        .terms-container {
+          margin-top: 10vw;
+
+          .terms {
+            margin: 2.5vw 0;
+            height: 6.5625vw;
+            line-height: 6.5625vw;
+
+            .box {
+              width: 6.5625vw;
+              height: 6.5625vw;
+              border-radius: 4px;
+              background-color: #f2f2f2;
+              float: left;
+
+              &.active {
+                background-color: #3fc0a7;
+              }
+            }
+
+            .txt {
+              margin-left: 3.125vw;
+              letter-spacing: -0.7px;
+              float: left;
+
+              font-size: 2.8125vw;
+              color: #666;
+
+              a {
+                color: #3fc0a7;
+              }
+            }
+          }
+        }
+
+        .btn-wrapper {
+          margin: 18.75vw auto 0;
+          width: 50vw;
+          height: 13.125vw;
+          line-height: 13.125vw;
+          border-radius: 3.75vw;
+          box-shadow: 0 10px 20px 0 rgba(34, 34, 34, 0.2);
+          background-color: #222222;
+
+          font-size: 3.4375vw;
+        }
+      }
+    }
+
+  }
+}

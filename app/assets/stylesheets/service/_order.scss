@@ -1,0 +1,195 @@
+.checkout-container {
+  .container {
+    width: 920px;
+    padding: 100px 0 140px;
+    margin: 0 auto;
+    .title {
+      height: 49px;
+      line-height: 49px;
+      font-size: 40px;
+      font-weight: bold;
+      color: #222;
+      margin-bottom: 60px;
+    }
+
+    .form-container {
+      float: left;
+      width: 400px;
+
+      .form-wrapper {
+        padding-bottom: 60px;
+        &.paymethod {
+          margin-bottom: 60px;
+          border-bottom: 1px solid #ddd;
+        }
+
+        .sub-title {
+          height: 36px;
+          line-height: 36px;
+          font-size: 26px;
+          font-weight: bold;
+          color: #4c5fc1;
+          margin-bottom: 40px;
+        }
+
+        .form-group {
+          margin-top: 30px;
+          .label {
+            height: 26px;
+            line-height: 26px;
+            font-size: 13px;
+            color: #666;
+            &.require:after {
+              margin-left: 4px;
+              content: '*';
+              color: #3fc0a7;
+            }
+          }
+
+          .inp {
+            margin-top: 10px;
+            height: 26px;
+            border: 0;
+            border-radius: 8px;
+            background-color: #f2f2f2;
+            padding: 20px 26px;
+            width: 348px;
+            display: block;
+            font-size: 14px;
+          }
+
+          .card-element {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px 26px;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+
+    .confirm-wrapper {
+      float: left;
+      margin-left: 60px;
+
+      width: 358px;
+      height: 463px;
+      border-radius: 20px;
+      border: solid 1px #222;
+      background-color: #fff;
+      padding: 55px 50px 50px;
+
+      .row {
+        width: 358px;
+        margin-top: 5px;
+        height: 26px;
+        line-height: 26px;
+        .label {
+          float: left;
+          font-size: 14px;
+          color: #666;
+        }
+
+        .name {
+          height: 29px;
+          line-height: 29px;
+          font-size: 24px;
+          font-weight: bold;
+          color: #222222;
+
+          .p-name {
+            color: #4c5fc1;
+          }
+        }
+
+        .price {
+          float: right;
+          font-size: 14px;
+          font-weight: 500;
+          color: #222;
+        }
+      }
+
+      .price-wrapper {
+        padding: 20px 0 30px;
+        .row {
+          margin-top: 10px;
+        }
+
+        &.amount-wrapper {
+          border-top: 1px solid #ddd;
+
+          .row {
+            height: 19px;
+            line-height: 19px;
+            .label {
+              font-size: 16px;
+              font-weight: bold;
+              color: #222;
+            }
+
+            .price {
+              font-size: 16px;
+              font-weight: bold;
+              color: #222;
+            }
+          }
+        }
+      }
+
+      .terms-container {
+        margin-top: 20px;
+
+        .terms {
+          width: 358px;
+          height: 21px;
+          line-height: 21px;
+
+          .box {
+            width: 21px;
+            height: 21px;
+            border-radius: 4px;
+            background-color: #f2f2f2;
+            float: left;
+
+            &.active {
+              background-image: image-url("service/commons/checkbox-sel.svg");
+              background-size: contain;
+              background-repeat: no-repeat;
+            }
+          }
+
+          .txt {
+            margin-left: 10px;
+            letter-spacing: -0.7px;
+            float: left;
+
+            font-size: 12px;
+            color: #666;
+
+            a {
+              color: #3fc0a7;
+            }
+          }
+        }
+      }
+
+      .order-btn {
+        margin: 80px auto 0;
+        width: 300px;
+        height: 66px;
+        line-height: 66px;
+        border-radius: 12px;
+        box-shadow: 0 10px 20px 0 rgba(34, 34, 34, 0.2);
+        background-color: #222;
+
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        color: #fff;
+        cursor: pointer;
+      }
+
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26" height="26" viewBox="0 0 26 26">
+    <defs>
+        <filter id="prefix__a" width="135%" height="266.7%" x="-17.5%" y="-59.5%" filterUnits="objectBoundingBox">
+            <feOffset dy="10" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="10"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.996078431 0 0 0 0 0.874509804 0 0 0 0 0.00784313725 0 0 0 0.2 0"/>
+        </filter>
+        <path id="prefix__b" d="M15.383 0h169.234c5.349 0 7.289.557 9.244 1.603 1.956 1.046 3.49 2.58 4.536 4.536 1.046 1.955 1.603 3.895 1.603 9.244v11.234c0 5.349-.557 7.289-1.603 9.244-1.046 1.956-2.58 3.49-4.536 4.536-1.955 1.046-3.895 1.603-9.244 1.603H15.383c-5.349 0-7.289-.557-9.244-1.603-1.956-1.046-3.49-2.58-4.536-4.536C.557 33.906 0 31.966 0 26.617V15.383c0-5.349.557-7.289 1.603-9.244 1.046-1.956 2.58-3.49 4.536-4.536C8.094.557 10.034 0 15.383 0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#000" d="M0 0H1840V1474H0z" transform="translate(-1020 -847)"/>
+        <g>
+            <path fill="#FFF" d="M0 79L320 79 320 851 0 851z" transform="translate(-1020 -847) translate(950 144)"/>
+            <g transform="translate(-1020 -847) translate(950 144) translate(60 695)">
+                <use fill="#000" filter="url(#prefix__a)" xlink:href="#prefix__b"/>
+                <use fill="#FEDF02" xlink:href="#prefix__b"/>
+                <g>
+                    <path fill="#391B1B" d="M13.5 6C9.358 6 6 8.504 6 11.593c0 2.011 1.423 3.773 3.558 4.76-.157.552-.568 2-.65 2.31-.102.386.15.38.314.277.128-.081 2.055-1.316 2.886-1.85.45.063.916.097 1.392.097 4.142 0 7.5-2.505 7.5-5.594C21 8.504 17.642 6 13.5 6" transform="translate(10 8)"/>
+                    <path d="M0 0H26V26H0z" transform="translate(10 8)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

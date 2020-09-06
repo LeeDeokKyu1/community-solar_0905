@@ -1,0 +1,29 @@
+<%= javascript_include_tag 'services/order', 'data-turbolinks-track': 'reload' %>
+
+<div class="info-container">
+  <div class="container">
+    <div class="content">
+
+      <div class="info_menu1">
+        <ul>
+          <li><a href="/information/tradinginfo">단지내 거래 참여정보</a></li>
+          <li><a href="/inforcommunity/communitysolarinfo">Community solar 참여정보</a></li>
+          <li><a href="/inforshare/shareinfo">공유 ESS 참여정보</a></li>
+          <li><a href="/infortrade/infortradedash">소규모 전력 거래정보</a></li>
+        </ul>
+      </div>
+      <div class="info-img">
+        <iframe src="<%= asset_path 'commsolar_dash.png' %>" width="350%" height="350%" frameborder="0" scrolling="no"></iframe>
+      <div class="dashbtn">
+        <button type="button" onClick="location.href='/inforcommunity/communitysolarinfo'">대시보드</button>
+        <button type="button" onClick="location.href='/inforcommunity/communitymonitor'">모니터링</button>
+        <button type="button" onClick="location.href='/inforcommunity/communitypay'">요금제조회</button>
+        <button type="button" onClick="location.href='/inforcommunity/communityrec'">이력조회</button>
+        <button type="button" onClick="location.href='/inforcommunity/communitycus'">고객센터</button>
+        <button type="button" onClick="location.href='/inforcommunity/communitynot'">공지사항</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+

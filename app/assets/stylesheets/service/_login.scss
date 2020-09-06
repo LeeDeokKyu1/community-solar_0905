@@ -1,0 +1,397 @@
+@import "../lib/util";
+
+.login-container {
+  .container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 120px 0;
+    background-image: image-url('service/commons/img-signup.svg');
+    background-size: 200px 150px;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+
+    .title {
+      height: 49px;
+      line-height: 49px;
+      font-size: 40px;
+      letter-spacing: 1px;
+      color: #222;
+    }
+
+    .sub-title {
+      margin-top: 60px;
+      font-size: 30px;
+      font-weight: bold;
+      line-height: 1.33;
+      color: #222;
+    }
+
+    .desc {
+      margin-top: 30px;
+      font-size: 14px;
+      line-height: 1.86;
+      color: #222;
+    }
+
+    .login-form {
+      margin-top: 60px;
+
+      .form-group {
+        margin: 10px 0;
+        width: 400px;
+
+        .inp {
+          padding: 20px 26px;
+          width: 348px;
+          height: 26px;
+          border-radius: 8px;
+          background-color: #f2f2f2;
+          border: 0;
+          font-size: 14px;
+        }
+
+        .box {
+          float: left;
+          width: 21px;
+          height: 21px;
+          background-image: image-url('service/commons/checkbox-nor.svg');
+          background-size: contain;
+          background-repeat: no-repeat;
+          cursor: pointer;
+        }
+
+        .txt {
+          float: left;
+          margin-left: 10px;
+          height: 21px;
+          line-height: 21px;
+          font-size: 12px;
+          color: #666;
+        }
+      }
+
+      .btn-container {
+        margin: 53px auto 76px;
+        width: 300px;
+        height: 66px;
+        line-height: 66px;
+        border-radius: 12px;
+        box-shadow: 0 10px 20px 0 rgba(34, 34, 34, 0.2);
+        background-color: #222;
+
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .link-container {
+        margin: 0 auto;
+        width: fit-content;
+        .li {
+          height: 16px;
+          line-height: 16px;
+          font-size: 14px;
+          color: #222;
+
+          &.a:after {
+            content: '·';
+            margin: 0 20px;
+            display: inline-block;
+          }
+        }
+      }
+    }
+
+    .sns-login {
+      margin: 60px auto 0;
+      border-top: 1px solid #ddd;
+      padding-top: 60px;
+
+      .sub-title {
+        height: 37px;
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        color: #222;
+      }
+
+      .list {
+        margin-top: 40px;
+
+        .item {
+          margin: 18px auto;
+          padding: 20px 56px;
+          width: 188px;
+          border-radius: 12px;
+          box-shadow: 0 10px 20px 0 rgba(34, 34, 34, 0.2);
+          cursor: pointer;
+
+          .icon {
+            width: 26px;
+            height: 26px;
+            float: left;
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+
+          .txt {
+            margin-left: 14px;
+            float: left;
+            width: 142px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+
+            font-size: 14px;
+            font-weight: bold;
+          }
+
+          &.email {
+            text-align: center;
+            background-color: #222;
+
+            .txt {
+              text-align: center;
+              width: 100%;
+              color: #fff;
+              margin-left: 0;
+            }
+          }
+
+          &.google {
+            background-color: #fff;
+            .icon {
+              background-image: image-url('service/commons/sns/ico-login-google@3x.jpg');
+            }
+
+            .txt {
+              color: #222;
+            }
+          }
+
+          &.facebook {
+            background-color: #3b5998;
+            .icon {
+              background-image: image-url('service/commons/sns/ico-login-fb@3x.jpg');
+            }
+            .txt {
+              color: #fff;
+            }
+          }
+
+          &.kakao {
+            background-color: #fedf02;
+            .icon {
+              background-image: image-url('service/commons/sns/ico-login-kakao.svg');
+            }
+            .txt {
+              color: #391b1b;
+            }
+          }
+
+          &.naver {
+            background-color: #00c73b;
+            .icon {
+              background-image: image-url('service/commons/sns/ico-login-naver.svg');
+            }
+            .txt {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+
+    .email-signup {
+      border-top: 0;
+      padding: 0;
+    }
+  }
+
+
+  @include respond-to(mobile) {
+    .container {
+      width: unset;
+      padding: 16.875vw 9.375vw;
+      background-size: 37.5vw 28.125vw;
+      background-position: 50% 0;
+      background-repeat: no-repeat;
+
+      .title {
+        height: 10vw;
+        line-height: 10vw;
+        font-size: 8.125vw;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: #222;
+      }
+
+      .login-form {
+        margin-top: 12.5vw;
+
+        .form-group {
+          margin: 1.875vw 0;
+          width: 100%;
+
+          .inp {
+            padding: 4.6875vw;
+            width: 71.875vw;
+            height: 4.6875vw;
+            line-height: 4.6875vw;
+            border-radius: 8px;
+            background-color: #f2f2f2;
+            border: 0;
+            border-radius: 8px;
+            font-size: 4.0625vw;
+          }
+
+          .box {
+            float: left;
+            width: 6.5625vw;
+            height: 6.5625vw;
+            background-image: image-url('service/commons/checkbox-nor.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+
+          .txt {
+            float: left;
+            margin-left: 3.125vw;
+            height: 6.5625vw;
+            line-height: 6.5625vw;
+            font-size: 2.8125vw;
+            color: #666;
+          }
+        }
+
+        .btn-container {
+          margin: 12.5vw auto;
+          width: 50vw;
+          height: 13.125vw;
+          line-height: 13.125vw;
+          border-radius: 12px;
+          box-shadow: 0 10px 20px 0 rgba(34, 34, 34, 0.2);
+          background-color: #222;
+
+          font-size: 3.4375vw;
+          font-weight: bold;
+          text-align: center;
+          color: #ffffff;
+        }
+
+        .link-container {
+          margin: 0 auto;
+          width: fit-content;
+
+          .li {
+            height: 4.0625vw;
+            line-height: 4.0625vw;
+            font-size: 3.4375vw;
+            color: #222;
+
+            &.a:after {
+              content: '·';
+              margin: 0 3.125vw;
+              display: inline-block;
+            }
+          }
+        }
+      }
+
+      .sns-login {
+        margin: 12.5vw auto 1.875vw;
+        border-top: 1px solid #ddd;
+        padding-top: 9.375vw;
+
+        .sub-title {
+          height: 6.875vw;
+          font-size: 5.625vw;
+          font-weight: bold;
+          text-align: center;
+          color: #222;
+        }
+
+        .list {
+          margin-top: 7.5vw;
+
+          .item {
+            margin: 3.75vw auto;
+            padding: 2.5vw 3.125vw;
+            width: 56.25vw;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px 0 rgba(34, 34, 34, 0.2);
+            cursor: pointer;
+
+            .icon {
+              width: 8.125vw;
+              height: 8.125vw;
+              float: left;
+              background-size: contain;
+              background-repeat: no-repeat;
+            }
+
+            .txt {
+              margin-left: unset;
+              float: left;
+              width: 48.125vw;
+              height: 8.125vw;
+              line-height: 8.125vw;
+              text-align: center;
+
+              font-size: 3.4375vw;
+              font-weight: bold;
+            }
+
+            &.google {
+              background-color: #fff;
+              .icon {
+                background-image: image-url('service/commons/sns/ico-login-google@3x.jpg');
+              }
+
+              .txt {
+                color: #222;
+              }
+            }
+
+            &.facebook {
+              background-color: #3b5998;
+              .icon {
+                background-image: image-url('service/commons/sns/ico-login-fb@3x.jpg');
+              }
+              .txt {
+                color: #fff;
+              }
+            }
+
+            &.kakao {
+              background-color: #fedf02;
+              .icon {
+                background-image: image-url('service/commons/sns/ico-login-kakao.svg');
+              }
+              .txt {
+                color: #391b1b;
+              }
+            }
+
+            &.naver {
+              background-color: #00c73b;
+              .icon {
+                background-image: image-url('service/commons/sns/ico-login-naver.svg');
+              }
+              .txt {
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+
+      .email-signup {
+        border-top: 0;
+        padding: 0;
+      }
+    }
+  }
+}

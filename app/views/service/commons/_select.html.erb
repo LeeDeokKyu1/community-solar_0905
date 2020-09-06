@@ -1,0 +1,16 @@
+<div class="custom-select-container">
+  <div data-target-id="<%= id %>" class="<%= inner_class %> custom-select-div clearfix" id="<%=id%>CustomTargetDiv">
+    <span id="<%= id %>SelectedVal" class="left"><%= local_assigns[:selected_text] ? selected_text : selected_value %></span>
+    <div class="after"></div>
+  </div>
+
+  <% if local_assigns[:custom_value] %>
+    <div class="custom-value" id="<%= id %>UserCustom">
+      <%= text_field_tag custom_value, '', class: custom_class %>
+    </div>
+  <% end %>
+  <%= select_tag id, options, class: 'custom-select' %>
+</div>
+
+
+

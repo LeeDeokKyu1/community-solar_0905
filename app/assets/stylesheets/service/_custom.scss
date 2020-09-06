@@ -1,0 +1,53 @@
+@import "../lib/util";
+
+.customer-container {
+  .content {
+    width: 1120px;
+    margin: 0 auto;
+    padding: 50px 0 100px;
+
+
+    li a {
+      display: block;
+      color: #000;
+      padding: 8px 93px;
+      font-weight: bold;
+      position: relative;
+      left: -86px;
+    }
+    .cust_menu {
+      font-size: 23px;
+      font-weight: bold;
+      width: 600px;
+      margin: 16px;
+      position: relative;
+      top: 30px;
+
+    }
+.cust-img{
+  width: 298px;
+  height: 220px;
+  position: relative;
+  top: -220px;
+  left: 399px;
+}
+    .cust_menu1 {
+      font-size: 23px;
+      font-weight: bold;
+      width: 600px;
+      margin: 16px;
+      position: relative;
+      top: 30px;
+
+    }
+    .cust2-img{
+      position: relative;
+      top: -31px;
+      left: -467px;
+    }
+    .cust3-img{
+      position: relative;
+      top: -163px;
+    }
+  }
+}

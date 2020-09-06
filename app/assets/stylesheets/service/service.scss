@@ -1,0 +1,87 @@
+@import "../lib/util";
+
+.wrapper {
+  @include respond-to(mobile) {
+    width: 100vw;
+
+    .content {
+      margin: 0 auto;
+      width: 88.75vw;
+    }
+  }
+}
+
+.clearfix:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.mobile-left {
+  float: unset;
+
+  @include respond-to(mobile) {
+    float: left;
+  }
+}
+
+.gray-line {
+  width: 100%;
+  height: 1px;
+  background-color: #222;
+  @include respond-to(mobile) {
+    width: 100vw;
+    height: 5.625vw;
+    background-color: #f2f2f2;
+  }
+}
+
+.terms {
+  width: 1120px;
+  margin: 0 auto;
+
+  @include respond-to(mobile) {
+    width: 87.5vw;
+    margin: 0 auto;
+
+    div {
+      padding: 0!important;
+    }
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat, Roboto, sans-serif;
+  font-size: 16px;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  input:focus {
+    box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.4), 0 1px 1px rgba(255, 255, 255, 0.2);
+    outline: none;
+  }
+
+}
+
+@font-face {
+  font-family: Roboto;
+  unicode-range: U+AC00-U+D7A3;
+}

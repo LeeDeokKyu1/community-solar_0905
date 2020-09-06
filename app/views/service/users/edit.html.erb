@@ -1,0 +1,42 @@
+<%= javascript_include_tag    'services/edit', 'data-turbolinks-track': 'reload' %>
+<div class="user-edit-container">
+  <div class="container">
+    <div class="title">MY PAGE</div>
+
+    <div class="form-container">
+      <%= form_tag "/users/#{@current_user.id}", id: 'updateForm', method: :put do %>
+
+        <%= hidden_field_tag :login_provider, @current_user.login_provider %>
+        <% if @current_user.email? %>
+          <%= hidden_field_tag :change_password, 'false' %>
+          <div class="form-group">
+            <label class="label require">비밀번호</label>
+            <%= password_field_tag :password, '', placeholder: '비밀번호를 입력하세요', class: 'inp', style: 'ime-mode:disabled;' %>
+          </div>
+
+          <div class="form-group">
+            <label class="label require">비밀번호 확인</label>
+            <%= password_field_tag :password_confirm, '', placeholder: '비밀번호를 입력하세요', class: 'inp', style: 'ime-mode:disabled;' %>
+            <p class="warning">비밀번호가 일치하지 않습니다.</p>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <label class="label require">Email</label>
+          <%= text_field_tag :email, @current_user.email, placeholder: '이메일을 입력해 주세요.', class: 'inp' %>
+          <p class="warning">이메일을 입력해주세요.</p>
+        </div>
+
+        <div class="form-group">
+          <label class="label require">이름</label>
+          <%= text_field_tag :name, @current_user.name, placeholder: '이름을 입력해 주세요.', class: 'inp' %>
+          <p class="warning">이름을 입력해주세요.</p>
+        </div>
+
+        <div class="btn-wrapper" id="updateBtn">
+          수정하기
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

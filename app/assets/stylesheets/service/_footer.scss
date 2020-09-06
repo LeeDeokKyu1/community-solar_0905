@@ -1,0 +1,70 @@
+@import "../lib/util";
+
+.footer {
+  background-color: #e5edec;
+  padding: 80px 0 100px;
+
+  .copyright {
+    margin: 14px auto 0;
+    width: 1120px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 11px;
+    color: #000;
+  }
+
+  .terms {
+    width: 1120px;
+    margin: 0 auto;
+    font-weight: bold;
+    .term {
+      height: 18px;
+      line-height: 18px;
+      font-size: 13px;
+      color: #222;
+      cursor: pointer;
+    }
+
+    .sep {
+      height: 18px;
+      line-height: 18px;
+      font-size: 13px;
+      color: #222;
+      margin: 0 20px;
+    }
+  }
+
+  @include respond-to(mobile) {
+    padding: 9.375vw 0 12.5vw 6.25vw;
+    .copyright {
+      width: auto;
+      height: 3.125vw;
+      line-height: 3.125vw;
+      font-size: 2.5vw;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      margin: 2.5vw 0 0;
+    }
+
+    .terms {
+      width: auto;
+      margin: unset;
+      .term {
+        height: 2.8125vw;
+        line-height: 2.8125vw;
+        font-size: 2.5vw;
+        font-weight: bold;
+        text-decoration: none;
+        float: left;
+      }
+
+      .sep {
+        font-size: 2.5vw;
+        float: left;
+        height: 2.8125vw;
+        line-height: 2.8125vw;
+        margin: 0 1.875vw;
+      }
+    }
+  }
+}

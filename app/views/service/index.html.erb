@@ -1,0 +1,38 @@
+<div class="main-container">
+  <div class="content">
+    <div class="banner">
+      Community solar
+      <div class="bannertext">
+        태양광! 이제 설치없이 사용한다
+        구독 참여를 통한 전기료 절약…
+      </div>
+    </div>
+
+    <div class="mainnotice">
+      공지사항
+      <div class="plus"><a href="/notice">더보기</a></div>
+      <ul>
+        <%= link_to '/notice' do %>
+          <li>8월 거래시장 Open일 공지</li>
+        <% end %>
+        <%= link_to '/notice' do %>
+          <li>시스템 점검에 따른 홈페이지 접속 불가 안내</li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="mainexp">
+      <div class="expbox">
+        사업참여 체험하기
+      </div>
+      <div class="exptext">
+        실제 참여하기에 앞서 가상의 환경에서 체험을 통해
+        사업 효과를 확인해보세요!
+      </div>
+      <%= link_to '/customerserv' do %>
+      <button type="button" >체험하기></button>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+

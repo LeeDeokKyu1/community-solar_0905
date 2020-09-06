@@ -1,0 +1,32 @@
+<%= javascript_include_tag 'services/order', 'data-turbolinks-track': 'reload' %>
+
+<div class="info-container">
+  <div class="container">
+    <div class="content">
+
+      <div class="info_menu1">
+        <ul>
+          <li><a href="/information/tradinginfo">단지내 거래 참여정보</a></li>
+          <li><a href="/inforcommunity/communitysolarinfo">Community solar 참여정보</a></li>
+          <li><a href="/inforshare/shareinfo">공유 ESS 참여정보</a></li>
+          <li><a href="/infortrade/infortradedash">소규모 전력 거래정보</a></li>
+        </ul>
+      </div>
+      <div class="info-img">
+        <iframe src="<%=asset_path 'shareinfo_settle.png'%>" width="400%" height="700" frameborder="0" scrolling="no"></iframe>
+        <div class="trabtn">
+          <button type="button"   onClick="location.href='/inforshare/shareinfo'">대시보드</button>
+          <button type="button"   onClick="location.href='/inforshare/sharemonitor'">모니터링</button>
+          <button type="button"   onClick="location.href='/inforshare/sharepower'">발전량 분석</button>
+          <button type="button"    onClick="location.href='/inforshare/sharehyst'">이력조회</button>
+          <button type="button"    onClick="location.href='/inforshare/sharefail'">장애 분석</button>
+          <button type="button"    onClick="location.href='/inforshare/shareservice'">서비스 내역</button>
+          <button type="button"   onClick="location.href='/inforshare/sharesettle'">정산</button>
+          <button type="button"    onClick="location.href='/inforshare/sharesetting'">설정</button>
+        </div>
+        <!--<img src="<%#=asset_path 'info.png'%>" alt="info" height="373" width="472" style="float: left">-->
+      </div>
+    </div>
+  </div>
+</div>
+

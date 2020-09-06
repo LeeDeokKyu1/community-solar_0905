@@ -1,0 +1,43 @@
+<script src="//static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+<%= javascript_include_tag    'auth', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag    'login', 'data-turbolinks-track': 'reload' %>
+
+<div class="login-container">
+  <div class="container">
+    <div class="title">SINGUP</div>
+
+    <div class="email-signup sns-login">
+      <ul class="list">
+        <li class="item clearfix email" data-type="email">
+          <div class="txt">이메일로 가입하기</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sns-login">
+      <ul class="list">
+        <li class="item clearfix google" data-type="google" id="g-signin2">
+          <div class="icon"></div>
+          <div class="txt">구글로 가입하기</div>
+        </li>
+        <% if Rails.env.alpha? || Rails.env.development? %>
+          <li class="item clearfix facebook" data-type="facebook">
+            <div class="icon"></div>
+            <div class="txt">페이스북으로 가입하기</div>
+          </li>
+        <% end %>
+        <li class="item clearfix kakao" data-type="kakao">
+          <div class="icon"></div>
+          <div class="txt">카카오로 가입하기</div>
+        </li>
+        <% if Rails.env.alpha? || Rails.env.development? %>
+          <li class="item clearfix naver" data-type="naver">
+            <div class="icon"></div>
+            <div class="txt">네이버로 가입하기</div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+  </div>
+</div>

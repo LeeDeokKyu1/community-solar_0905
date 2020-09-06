@@ -1,0 +1,139 @@
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+
+<div class="checkout-container">
+  <div class="container">
+    <p class="title">CHECKOUT</p>
+
+    <div class="clearfix">
+      <div class="form-container">
+        <div class="form-wrapper paymethod">
+          <p class="sub-title">가입정보</p>
+          <div class="form-group">
+            <p class="label">아파트</p>
+            <p class="inp"><%= @current_user.apt_name %></p>
+          </div>
+
+          <div class="form-group">
+            <p class="label">동</p>
+            <p class="inp"><%= @current_user.building_number %></p>
+          </div>
+
+          <div class="form-group">
+            <p class="label">호</p>
+            <p class="inp"><%= @current_user.building_line_number %></p>
+          </div>
+
+          <div class="form-group">
+            <p class="label">세대주</p>
+            <p class="inp"><%= @current_user.householder_name %></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="confirm-wrapper">
+        <div class="row clearfix">
+          <div class="label">구매상품</div>
+        </div>
+
+        <div class="row">
+          <div class="name">PLAN : <span class="p-name"><%= @plan.name %></span></div>
+        </div>
+
+        <div class="price-wrapper">
+          <div class="row clearfix">
+            <div class="label">상품금액</div>
+          </div>
+        </div>
+
+        <div class="price-wrapper amount-wrapper">
+          <div class="row clearfix">
+            <div class="label">총 결제 금액</div>
+            <div class="price">￦ <%= @plan.price %></div>
+          </div>
+        </div>
+
+        <div class="terms-container">
+          <div class="terms clearfix">
+            <div class="box" id="terms"></div>
+            <div class="txt">
+              PMF <a href="/terms" target="_blank">이용약관</a>, <a href="/privacy" target="_blank">개인정보처리방침</a>에 동의합니다. (필수)
+            </div>
+          </div>
+        </div>
+
+        <div class="order-btn" id="orderBtn">결제하기</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $(document).ready(function(){
+      var IMP = window.IMP; // 생략가능
+      IMP.init('imp96897390');
+    });
+
+    $("#orderBtn").click(function() {
+      if (!$("#terms").hasClass("active")) {
+        alert("약관을 동의해 주세요.");
+        return;
+      }
+       payment();
+    });
+
+    $(".terms-container .terms").click(function() {
+      const box = $(this).children(".box");
+      if ($(box).hasClass("active")) {
+        $(box).removeClass("active");
+      } else {
+        $(box).addClass("active");
+      }
+    });
+
+    function payment() {
+      IMP.request_pay({
+        pg : 'danal', // version 1.1.0부터 지원.
+        pay_method : 'card',
+        merchant_uid : '<%= @order.merchant_uid %>',
+        name : '<%= @plan.name %>',
+        amount : <%= @plan.price %>,
+        buyer_name : '<%= @current_user.name %>',
+        buyer_tel : '<%= @current_user.phone_number %>'
+      }, function(rsp) {
+        if ( rsp.success ) {
+          completeOrder(<%= @order.id %>, rsp);
+        } else {
+          var msg = '결제에 실패하였습니다.';
+          msg += '에러내용 : ' + rsp.error_msg;
+          alert(msg);
+        }
+      });
+    }
+
+    function completeOrder(orderId, data) {
+      $.ajax({
+        url: `/orders/${orderId}/complete`,
+        type: 'put',
+        data: {imp_uid: data.imp_uid},
+        dataType: 'json',
+        success: function (data) {
+          location.href = "/orders/done";
+        },
+        error: function (xhr, status, e) {
+          if (xhr.responseJSON !== undefined) {
+            if (xhr.responseJSON.errorCode === 10002) {
+              location.href = "/login?url=/orders/plans";
+            } else if (xhr.responseJSON.message !== null) {
+              alert(xhr.responseJSON.message);
+            }
+            return;
+          }
+          alert("다시시도해주세요");
+        }
+      });
+    }
+  });
+
+</script>

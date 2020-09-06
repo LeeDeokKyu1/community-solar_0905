@@ -1,0 +1,55 @@
+@import "../lib/util";
+
+.complete-container {
+  .container {
+    position: relative;
+    padding: 180px 0 200px;
+    .logo {
+      background-image: image-url('service/orders/img-premium-checkoutcom.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 200px;
+      height: 200px;
+      margin: auto;
+    }
+
+    .description-container {
+      margin-top: 60px;
+
+      .b {
+        margin-bottom: 26px;
+        height: 36px;
+        line-height: 36px;
+        font-size: 26px;
+        font-weight: bold;
+        text-align: center;
+        color: #222;
+      }
+
+      .n {
+        height: 26px;
+        line-height: 26px;
+        font-size: 14px;
+        text-align: center;
+        color: #222;
+      }
+    }
+
+    .link-container {
+      width: 300px;
+      height: 66px;
+      line-height: 66px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px 0 rgba(63, 192, 167, 0.2);
+      background-color: #3fc0a7;
+      margin: 80px auto 0;
+
+      .btn {
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        color: #fff;
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+<div class="inquiries-container">
+  <div class="content">
+    <div class="search-container">
+      <select id="year" class="sel-year">
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020" selected>2020</option>
+      </select>
+
+      <button id="searchBtn" class="search-btn">조회</button>
+    </div>
+
+    <div class="graph-container">
+      <canvas id="graph"></canvas>
+    </div>
+
+    <div class="content-container">
+      <div class="row clearfix">
+        <div class="val" id="selDate">2020.09</div>
+      </div>
+
+      <div class="row clearfix">
+        <div class="label">소비전력</div>
+        <div class="val" id="selConsume">418kWh</div>
+      </div>
+
+      <div class="row clearfix">
+        <div class="label">전기세</div>
+        <div class="val">￦<span id="selAmount">48,000</span></div>
+      </div>
+
+      <div class="row clearfix">
+        <div class="label">절감금액</div>
+        <div class="val">￦<span id="selSaving">13,000</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  var color = Chart.helpers.color;
+  var barChartData = {
+    labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+    datasets: [{
+      label: '소비전력',
+      backgroundColor: color("rgb(255, 99, 132)").alpha(0.5).rgbString(),
+      borderColor: "rgb(255, 99, 132)",
+      borderWidth: 1,
+      yAxisId: 'y1',
+      data: [
+        350,
+        330,
+        300,
+        280,
+        312,
+        388,
+        478,
+        413,
+        361,
+        329,
+        381,
+        318,
+      ]
+    }, {
+      label: '절감금액',
+      backgroundColor: color("rgb(54, 162, 235)").alpha(0.5).rgbString(),
+      borderColor: "rgb(54, 162, 235)",
+      borderWidth: 1,
+      yAxisId: 'y2',
+      data: [
+        10000,
+        8000,
+        4000,
+        2000,
+        7000,
+        13000,
+        28000,
+        19000,
+        11000,
+        3000,
+        12000,
+        2000,
+      ]
+    }]
+  };
+
+  window.onload = function() {
+    var ctx = document.getElementById('graph').getContext('2d');
+    window.myBar = new Chart(ctx, {
+      type: 'bar',
+      data: barChartData,
+      options: {
+        responsive: true,
+        legend: {
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: '월별 사용량'
+        },
+        scales: {
+          yAxes: [{
+            type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+            display: true,
+            position: 'right',
+            id: 'y1',
+          }, {
+            type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+            display: true,
+            position: 'left',
+            id: 'y2',
+            gridLines: {
+              drawOnChartArea: false
+            }
+          }],
+        },
+        onClick: chartClick
+      }
+    });
+
+    function chartClick(e, i) {
+    }
+
+  };
+</script>

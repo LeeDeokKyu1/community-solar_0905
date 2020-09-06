@@ -1,0 +1,21 @@
+branch-defaults:
+  develop:
+    environment: CommunitySolar-alpha
+  master:
+    environment: CommunitySolar-alpha
+    group_suffix: null
+environment-defaults:
+  hoss-alpha:
+    branch: null
+    repository: null
+global:
+  application_name: CommunitySolar
+  default_ec2_keyname: companions-cli
+  default_region: ap-northeast-2
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: companions-cli
+  sc: git
+  workspace_type: Application

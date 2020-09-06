@@ -1,0 +1,103 @@
+@import "../lib/util";
+
+.main-container {
+  .content {
+    width: 1120px;
+    margin: 0 auto;
+    padding: 50px 0 100px;
+    .banner{
+      border: 1px solid;
+      width: 800px;
+      font-weight: bold;
+      .bannertext{
+        font-size: 28px;
+        font-weight: bold;
+        width: 430px;
+        margin: 16px;
+      }
+    }
+
+    .mainnotice {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 329px 0 -121px;
+      border: 1px solid;
+      width: 334px;
+    }
+
+    .plus {
+      font-size: 10px;
+      text-align: right;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li  {
+      font-size: 16px;
+      list-style-type: none;
+    }
+
+    .mainexp {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0 450px 30px;
+      width: 400px;
+
+      .exptext{
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+/*.row {
+  font-size: 18px;
+  line-height: 53px;
+  .label {
+    float: left;
+    font-weight: 700;
+    width: 250px;
+  }
+
+  .val {
+    float: left;
+    width: 300px;
+  }
+
+  .prev {
+    float: left;
+    width: 250px;
+  }
+
+  .cur {
+    float: left;
+    width: 250px;
+  }
+
+  &.graph-container {
+    float: left;
+    width: 400px;
+
+    canvas {
+      width: 400px;
+    }
+  }
+
+}*/
+
+
+/*@include respond-to(mobile) {
+  width: 88.75vw;
+
+  .graph-container {
+    width: 88.75vw !important;
+
+    canvas {
+      width: 88.75vw !important;
+    }
+  }
+}*/
+
+

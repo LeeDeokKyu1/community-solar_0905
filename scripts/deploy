@@ -1,0 +1,105 @@
+#!/usr/bin/env ruby
+require "thor"
+
+class CommunitySolarWebappDeploy < Thor
+  class_option :noasset, :type => :boolean
+
+  APP_DIR = File.expand_path('..', File.dirname(__FILE__))
+  ASSET_DIRS = [
+    File.expand_path('public/alpha/assets', APP_DIR),
+    File.expand_path('public/production/assets', APP_DIR),
+  ]
+  ASSET_MANIFEST_FILES = %w(.sprockets-manifest manifest.json)
+  AVAILABLE_PHASES = %w(alpha production)
+
+  ASSET_COMPILE_PHASE = {
+    alpha: 'alpha',
+    beta: 'production',
+    admin: 'production',
+    production: 'production'
+  }
+
+  ASSET_COMPILE_NODE_ENV = {
+    alpha: 'production',
+    beta: 'production',
+    admin: 'production',
+    production: 'production'
+  }
+
+  default_task :deploy
+
+  desc "alpha", "deploy to alpha"
+  def alpha
+    do_deploy(:alpha)
+  end
+
+  desc "admin", "deploy to admin"
+  def admin
+    do_deploy(:admin)
+  end
+
+  desc "production", "deploy to production"
+  def beta
+    do_deploy(:beta)
+  end
+
+  desc "production", "deploy to production"
+  def production
+    do_deploy(:production)
+  end
+
+  desc "worker_alpha", "deploy to worker_alpha"
+  def worker_alpha
+    do_deploy(:'worker-alpha')
+  end
+
+  desc "worker_prod", "deploy to worker_prod"
+  def worker_prod
+    do_deploy(:'worker-prod')
+  end
+
+  desc "", "default deploy task"
+  def deploy
+    phase = ask("Where to deploy?", :cyan, limited_to: AVAILABLE_PHASES)
+    do_deploy(phase.to_sym)
+  end
+
+  private
+  def do_deploy(phase)
+    # log "Running tests.."
+    # test_success = system("bundle exec rspec")
+    # return unless test_success
+
+    if compile_assets?(phase) && !options[:noasset]
+      log "Compiling assets.."
+      system("RAILS_ENV=#{ASSET_COMPILE_PHASE[phase]} SECRET_KEY_BASE=DUMMY_SECRET NODE_ENV=#{ASSET_COMPILE_NODE_ENV[phase]} bundle exec rake assets:precompile")
+
+      if ASSET_MANIFEST_FILES.any? { |file| %x(git status).include?(file) }
+        log "Commiting asset manifest file"
+
+        system("git add public")
+        system("git commit -m 'commit assets'")
+      else
+        log "No assets have been changed"
+      end
+    end
+
+    log "Starting deploy to [#{phase}]"
+
+    system("eb use CommunitySolar-#{phase}")
+    system("eb deploy")
+    system("git checkout .elasticbeanstalk/config.yml") #reset environment
+
+    system("git tag #{phase}-#{Time.now.strftime("%Y%m%d-%H%M%S-%L")}")
+  end
+
+  def compile_assets?(phase)
+    ASSET_COMPILE_PHASE.keys.include? phase
+  end
+
+  def log(message)
+    say "[#{Time.now}] #{message}", :green
+  end
+end
+
+CommunitySolarWebappDeploy.start(ARGV)

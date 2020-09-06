@@ -1,0 +1,143 @@
+<div class="user-container">
+  <div class="container clearfix">
+    <div class="menus pc">
+      <ul class="menu-list">
+        <%= link_to "/users/me" do %>
+          <li class="sub-menu active">계정정보</li>
+        <% end %>
+        <%#= link_to "/users/orders" do %>
+        <!--          <li class="sub-menu">구독정보</li>-->
+        <%# end %>
+      </ul>
+
+      <%= link_to "/logout" do %>
+        <div class="logout">로그아웃</div>
+      <% end %>
+    </div>
+
+    <div class="main-content">
+      <div class="title">MY PAGE</div>
+      <div class="list-container user-info">
+        <div class="title-wrapper clearfix">
+          <div class="title">계정정보</div>
+          <%#= link_to "/users/#{@current_user.id}/edit" do %>
+<!--            <div class="more mobile">수정하기</div>-->
+          <%# end %>
+        </div>
+
+        <div class="required">
+          <div class="row clearfix">
+            <div class="col label">이름</div>
+            <div class="col value"><%= @current_user.name %></div>
+          </div>
+        </div>
+
+        <%= link_to "/users/edit" do %>
+          <div class="modify-btn pc">수정하기</div>
+        <% end %>
+      </div>
+
+      <%# if @current_user.subscribes.any? %>
+<!--        <div class="list-container order-info">-->
+<!--          <div class="title-wrapper clearfix">-->
+<!--            <div class="title">구독정보</div>-->
+<!--            <div class="more mobile">변경하기</div>-->
+<!--          </div>-->
+
+<!--          <div class="orders-container">-->
+            <%# @current_user.subscribes.each_with_index do |subscribe, idx| %>
+<!--              <div>-->
+<!--                <div class="order-container clearfix">-->
+<!--                  <div class="name"><%#= subscribe.plan.name %></div>-->
+<!--                  <div class="price">$ <%#= subscribe.price %> / <%#= subscribe.monthly? ? "1달" : "1년" %></div>-->
+<!--                </div>-->
+
+<!--                <ul class="list clearfix">-->
+<!--                  <li class="item">-->
+<!--                    <div class="paymethod-container clearfix">-->
+<!--                      <div class="label">결제카드</div>-->
+<!--                      <div class="value"><%#= subscribe.paymethod %></div>-->
+<!--                    </div>-->
+
+<!--                    <p class="btn-wrapper" id="paymentShowAll">-->
+<!--                      결제내역보기-->
+<!--                    </p>-->
+
+<!--                    <div class="hidden">-->
+<!--                      <div class="payment-container clearfix">-->
+<!--                        <div class="label"><%#= subscribe.order_stripe_resp.present? ? "#{Time.at(subscribe.order_stripe_resp["created"]).strftime("%y.%m.%d")}" : "-" %></div>-->
+<!--                        <div class="value">$<%#= subscribe.order.present? ? subscribe.order.amount : "-" %> </div>-->
+<!--                      </div>-->
+
+<!--                      <div class="period-container">-->
+                        <%#= subscribe.period %>
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </li>-->
+<!--                </ul>-->
+<!--              </div>-->
+            <%# end %>
+<!--          </div>-->
+
+          <%#= link_to "/users/edit" do %>
+<!--            <div class="modify-btn pc">수정하기</div>-->
+          <%# end %>
+<!--        </div>-->
+      <%# end %>
+
+      <div class="withdraw-btn pc">
+        탈퇴하기
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function () {
+
+    $("#paymentShowAll").click(function(e) {
+      e.preventDefault();
+
+      $(".hidden").show();
+      $(this).hide();
+    });
+
+    $(".withdraw-btn").click(function(e) {
+      e.preventDefault();
+
+      $.ajax({
+        type: 'get',
+        url: '/users/check_withdraw',
+        success: function (resp) {
+          const remainDay = resp.remains;
+          confirmWithdraw(remainDay);
+        }
+      });
+    });
+
+    function confirmWithdraw(remainDays) {
+      let message;
+      if (remainDays.length == 0) {
+        message = "정말로 탈퇴 하시겠습니까?";
+      } else {
+        message = remainDays + "까지 구독 기간이 남아 있습니다. 탈퇴 후 이용 하실 수 없습니다. 탈퇴하시겠습니까?";
+      }
+
+      if (confirm(message)) {
+        $.ajax({
+          type: 'delete',
+          url: '/users/withdraw',
+          success: function() {
+            alert("탈퇴되었습니다.");
+            location.href = "/";
+          },
+          error: function() {
+            alert("잠시후 다시 이용해주세요.");
+            location.reload();
+          }
+        });
+      }
+    }
+
+  });
+</script>

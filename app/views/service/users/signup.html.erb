@@ -1,0 +1,91 @@
+<%= javascript_include_tag    'auth', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag    'signup', 'data-turbolinks-track': 'reload' %>
+
+<div class="signup-container">
+  <div class="container">
+    <div class="title"> SIGN UP </div>
+    <div class="form-container">
+      <%= form_tag '', id: 'signupForm' do %>
+        <%= hidden_field_tag :login_provider, @login_provider%>
+
+        <% if @login_provider == 'email' %>
+          <div class="form-group">
+            <label class="label require">Email ID</label>
+            <%= text_field_tag :login_user_id, '', placeholder: '이메일을 입력하세요', class: 'inp' %>
+            <p class="warning">이메일 형식이 잘못되어 있습니다.</p>
+          </div>
+
+          <div class="form-group">
+            <label class="label require">비밀번호</label>
+            <%= password_field_tag :password, '', placeholder: '비밀번호를 입력하세요', class: 'inp', style: 'ime-mode:disabled;' %>
+          </div>
+
+          <div class="form-group">
+            <label class="label require">비밀번호 확인</label>
+            <%= password_field_tag :password_confirm, '', placeholder: '비밀번호를 입력하세요', class: 'inp', style: 'ime-mode:disabled;' %>
+            <p class="warning">비밀번호가 일치하지 않습니다.</p>
+          </div>
+
+        <% else %>
+          <%= hidden_field_tag :login_user_id %>
+          <%= hidden_field_tag :social_token %>
+        <% end %>
+
+        <div class="form-group">
+          <label class="label require">아파트이름</label>
+          <%= text_field_tag :apt_name, '', placeholder: '아파트 이름을 입력해 주세요.', class: 'inp' %>
+          <p class="warning">아파트 이름을 입력해주세요.</p>
+        </div>
+
+        <div class="form-group clearfix">
+          <label class="label require">아파트 동, 호</label>
+          <%= text_field_tag :building_number, '', placeholder: '', class: 'inp half' %>
+          <span class="sub">동</span>
+          <%= text_field_tag :building_line_number, '', placeholder: '', class: 'inp half' %>
+          <span class="sub">호</span>
+          <p class="warning">아파트 동.호를 입력해주세요.</p>
+        </div>
+
+        <div class="form-group">
+          <label class="label require">세대주 이름</label>
+          <%= text_field_tag :householder_name, '', placeholder: '세대주 이름을 입력해 주세요.', class: 'inp' %>
+          <p class="warning">세대주 이름을 입력해주세요.</p>
+        </div>
+
+        <div class="form-group">
+          <label class="label require">이름</label>
+          <%= text_field_tag :name, '', placeholder: '이름을 입력해 주세요.', class: 'inp' %>
+          <p class="warning">이름을 입력해주세요.</p>
+        </div>
+
+        <div class="form-group">
+          <label class="label require">전화번호</label>
+          <%= text_field_tag :phone_number, '', placeholder: '전화번호를 입력해 주세요.', class: 'inp' %>
+          <p class="warning">전화번호를 입력해주세요.</p>
+        </div>
+
+        <% if @login_provider != 'email' %>
+          <div class="form-group">
+            <label class="label require">Email</label>
+            <%= text_field_tag :email, '', placeholder: '이메일을 입력해 주세요.', class: 'inp' %>
+            <p class="warning">이메일을 입력해주세요.</p>
+          </div>
+        <% end %>
+
+        <div class="terms-container">
+          <div class="terms clearfix">
+            <div class="box" id="terms"></div>
+            <div class="txt">
+              PMF <a href="/terms" target="_blank">이용약관</a>, <a href="/privacy" target="_blank">개인정보처리방침</a>에 동의합니다. (필수)
+            </div>
+          </div>
+
+        </div>
+
+        <div class="btn-wrapper" id="signupBtn">
+          Community Solar 가입하기
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

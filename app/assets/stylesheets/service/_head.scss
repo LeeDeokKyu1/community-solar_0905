@@ -1,0 +1,60 @@
+@import "../lib/util";
+
+.head {
+  display: none;
+
+  @include respond-to(mobile) {
+    display: block;
+    width: 100vw;
+    height: 13.75vw;
+    line-height: 7.5vw;
+    text-align: center;
+
+    .container {
+      margin: 0 auto;
+      padding: 3.125vw 0;
+      width: 91.25vw;
+      position: relative;
+
+      .menu {
+        float: left;
+        width: 7.5vw;
+        height: 7.5vw;
+        background-image: image-url('service/commons/btn-hamburguer@3x.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        background-image: image-url('service/commons/img-gnb-logo.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 29.375vw;
+        height: 7.5vw;
+        background-position: center;
+
+        &.sub-menu {
+          background: none;
+          font-size: 4.6875vw;
+          font-weight: bold;
+          text-align: center;
+          width: auto;
+          color: #222;
+        }
+      }
+
+      .search {
+        float: right;
+        width: 7.5vw;
+        height: 7.5vw;
+
+        background-image: image-url('service/commons/ico-gnb-menu.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@import "../lib/util";
+
+.apply-container {
+  .content {
+    width: 1120px;
+    margin: 0 auto;
+    padding: 50px 0 100px;
+
+
+    li a {
+      display: block;
+      color: #000;
+      padding: 8px 93px;
+
+      position: relative;
+      left: -86px;
+    }
+
+
+    .certifiedbox {
+      font-size: 20px;
+      font-weight: bold;
+      width: 431px;
+      margin: 14px;
+      position: relative;
+      top: -28px;
+    }
+
+    .certifiedbox_1 {
+      font-size: 20px;
+      font-weight: bold;
+      position: relative;
+      left: 400px;
+      top: -70px;
+    }
+
+    .apply_menu {
+      font-size: 18px;
+      font-weight: bold;
+      width: 430px;
+      margin: 16px;
+
+    }
+
+    .apply-img {
+      position: relative;
+      left: -331px;
+      top: -231px;
+      float: right;
+      height: 2px;
+    }
+
+    .trading_ser {
+      position: relative;
+      left: auto;
+      top: -164px;
+      margin: 0 367px 0;
+
+      .trabtn {
+        position: relative;
+        top: -22px;
+        left: 201px;
+      }
+
+      .trade_notice {
+        border: 1px solid;
+        width: 242px;
+      }
+
+      .trabtn2 {
+        position: relative;
+        top: 10px;
+        left: 173px;
+      }
+    }
+  }
+}

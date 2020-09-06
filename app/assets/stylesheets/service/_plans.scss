@@ -1,0 +1,314 @@
+@import "../lib/util";
+.plans-container {
+  .container {
+    width: 1120px;
+    margin: 0 auto;
+    padding: 100px 0 120px;
+
+    .top {
+      margin-top: 0;
+      font-size: 30px;
+      font-weight: bold;
+      line-height: 1.33;
+      color: #222;
+    }
+
+    .desc {
+      margin-top: 40px;
+      font-size: 14px;
+      line-height: 26px;
+      color: #222;
+    }
+
+    .plan-list {
+      margin-top: 101px;
+
+      .plan {
+        float: left;
+        width: 280px;
+        height: 418px;
+        padding: 50px 40px 40px;
+        border-radius: 10px;
+        background-color: #f2f2f2;
+        margin: 0;
+        position: relative;
+        color: #222;
+
+        &:nth-of-type(2) {
+          margin: 0 20px;
+        }
+
+        .name {
+          height: 22px;
+          line-height: 22px;
+          font-size: 16px;
+          font-weight: bold;
+          letter-spacing: 2px;
+
+          &.bn-name {
+            font-size: 30px;
+            height: 35px;
+            line-height: 35px;
+            margin-bottom: 20px;
+          }
+        }
+
+        .price-wrapper {
+          margin-top: 6px;
+
+          .price {
+            float: left;
+            height: 37px;
+            line-height: 37px;
+            font-size: 30px;
+            font-weight: bold;
+          }
+
+          .origin-price {
+            float: right;
+            margin-top: 18px;
+            height: 19px;
+            line-height: 19px;
+            font-size: 16px;
+            color: #ccc;
+            text-decoration: line-through;
+          }
+        }
+
+        .price-desc {
+          margin-top: 16px;
+          height: 20px;
+          line-height: 20px;
+          font-size: 12px;
+          font-weight: bold;
+        }
+
+        .adv-list {
+          margin-top: 37px;
+
+          .adv {
+            height: 22px;
+            line-height: 22px;
+            font-size: 14px;
+            color: #666;
+
+            &:before {
+              content: '';
+              width: 4px;
+              height: 4px;
+              border-radius: 4px;
+              background-color: #666;
+              margin-right: 6px;
+              display: inline-block;
+            }
+          }
+        }
+
+        .btn-wrapper {
+          position: absolute;
+          bottom: 40px;
+          border-radius: 8px;
+
+          .btn {
+            cursor: pointer;
+            width: 280px;
+            height: 66px;
+            line-height: 66px;
+            border-radius: 8px;
+            background-color: #222;
+
+            font-size: 13px;
+            font-weight: bold;
+            text-align: center;
+            color: #fff;
+          }
+        }
+
+        &.yearly {
+          background-color: #4c5fc1;
+          color: #fff;
+          .adv-list {
+            .adv {
+              color: #ddd;
+              &:before {
+                background-color: #f2f2f2;
+              }
+            }
+          }
+
+          .btn-wrapper {
+            .btn {
+              color: #4c5fc1;
+              background-color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include respond-to(mobile) {
+    .container {
+      width: 88.75vw;
+      margin: 0 auto;
+      padding: 0;
+
+      p {
+        margin: 0;
+      }
+
+      .top {
+        margin-top: 9.375vw;
+        font-size: 5.625vw;
+        font-weight: bold;
+        line-height: 1.33;
+        color: #222;
+      }
+
+      .desc {
+        margin-top: 9.375vw;
+        font-size: 4.0625vw;
+        line-height: 1.69;
+        color: #222;
+      }
+
+      .plan-list {
+        margin-top: 12.5vw;
+
+        .plan {
+          float: left;
+          width: 72.5vw;
+          height: auto;
+          min-height: 79.0625vw;
+          padding: 8.125vw 8.125vw 9.375vw;
+          border-radius: 10px;
+          background-color: #f2f2f2;
+          margin: 3.125vw 0;
+
+          &:nth-of-type(2) {
+            margin: 3.125vw 0;
+          }
+
+          .name {
+            height: 6.875vw;
+            line-height: 6.875vw;
+            font-size: 4.6875vw;
+            font-weight: bold;
+            color: #222;
+          }
+
+          .price-wrapper {
+            margin-top: 1.875vw;
+
+            .price {
+              height: 8.4375vw;
+              line-height: 8.4375vw;
+              font-size: 6.875vw;
+              font-weight: bold;
+              color: #222;
+              float: left;
+            }
+
+            .origin-price {
+              float: right;
+              margin-top: 0;
+              height: 8.4375vw;
+              line-height: 8.4375vw;
+              font-size: 3.75vw;
+              color: #ccc;
+              text-decoration: line-through;
+            }
+          }
+
+          .price-desc {
+            margin-top: 3.125vw;
+            line-height: 5.625vw;
+            font-size: 2.5vw;
+            font-weight: bold;
+            color: #222;
+          }
+
+          .adv-list {
+            margin-top: 6.25vw;
+
+            .adv {
+              height: 5.625vw;
+              line-height: 5.625vw;
+              font-size: 3.4375vw;
+              color: #666;
+
+              &:before {
+                content: '';
+                width: 4px;
+                height: 4px;
+                border-radius: 4px;
+                background-color: #666;
+                margin-right: 6px;
+                display: inline-block;
+              }
+            }
+          }
+
+          .btn-wrapper {
+            bottom: 9.375vw;
+
+            .custom-select-container {
+              float: left;
+
+              .splan {
+                width: 20.625vw;
+                margin-top: 0;
+                background-color: #fff;
+                float: left;
+                padding: 4.6875vw;
+
+                span {
+                  width: 51px;
+                  height: 15px;
+                  font-size: 13px;
+                  color: #222;
+                  margin: 0;
+                }
+              }
+            }
+
+            .btn {
+              float: left;
+              margin-left: 1.5625vw;
+              width: 40.9375vw;
+              height: 14.0625vw;
+              line-height: 14.0625vw;
+              border-radius: 2.5vw;
+              background-color: #4c5fc1;
+
+              font-size: 3.4375vw;
+              font-weight: bold;
+              text-align: center;
+              color: #fff;
+              cursor: pointer;
+            }
+          }
+
+          .plan-desc {
+            font-size: 3.4375vw;
+            line-height: 1.64;
+            color: #222;
+          }
+
+          .inquiry-btn {
+            width: 72.5vw;
+            margin-top: 43.125vw;
+            height: 14.0625vw;
+            line-height: 14.0625vw;
+            border-radius: 2.5vw;
+            background-color: #222;
+            font-size: 3.4375vw;
+            font-weight: bold;
+            text-align: center;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

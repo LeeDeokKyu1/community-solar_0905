@@ -1,0 +1,77 @@
+<div class="menu-container" id="serviceMenu">
+  <div class="container">
+    <div class="login-wrapper clearfix">
+      <%= link_to "/" do %>
+        <div class="logo">COMMUNITY SOLAR</div>
+      <% end %>
+
+      <div class="u-container clearfix">
+        <% if @current_user.blank? %>
+
+          <% if @has_email %>
+            <span class="login-signup"> 안녕하세요 </span>
+            <span class="sp">·</span>
+            <%= link_to '/logout' do %>
+              <span class="login-signup"> 로그아웃 </span>
+            <% end %>
+          <% else %>
+            <%= link_to '/login' do %>
+              <span class="login-signup"> 로그인 </span>
+            <% end %>
+
+            <span class="sp">·</span>
+
+            <%= link_to '/landing_signup' do %>
+              <span class="login-signup"> 회원가입 </span>
+            <% end %>
+          <% end %>
+        <% else %>
+
+
+          <div class="name-container">
+            <%= link_to '/users/me' do %>
+              <span class="name"><%= @current_user.name %></span>
+            <% end %>
+            <span class="intro"> 님, 안녕하세요</span>
+          </div>
+        <% end %>
+    </div>
+    </div>
+
+    <ul class="menu-list clearfix">
+      <li class="menu" data-link="/">
+        <%= link_to '/' do %>
+          HOME
+        <% end %>
+      </li>
+
+      <li class="menu" data-link="/summary">
+        <%= link_to '/summary' do %>
+          사업개요
+        <% end %>
+      </li>
+
+      <li class="menu" data-link="/apply">
+        <%= link_to '/apply' do %>
+          사업참여신청
+        <% end %>
+      </li>
+      <li class="menu" data-link="/information">
+        <%= link_to '/information' do %>
+          참여사업정보
+        <% end %>
+      </li>
+      <li class="menu" data-link="/users/me">
+        <%= link_to '/users/me' do %>
+          마이페이지
+        <% end %>
+      </li>
+
+      <li class="menu" data-link="/customerserv">
+        <%= link_to '/customerserv' do %>
+          고객센터
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>

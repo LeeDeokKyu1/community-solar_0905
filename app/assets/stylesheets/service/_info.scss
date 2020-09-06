@@ -1,0 +1,81 @@
+@import "../lib/util";
+
+.info-container {
+  .content {
+    width: 1120px;
+    margin: 0 auto 100px;
+    padding: 50px 0 320px;
+
+
+    li a {
+      display: block;
+      color: #000;
+      padding: 8px 93px;
+      font-weight: bold;
+      position: relative;
+      left: -86px;
+    }
+    .info_menu1 {
+      font-size: 18px;
+      font-weight: bold;
+      width: 430px;
+      margin: 16px;
+
+    }
+.info-img{
+  width: 298px;
+  height: 220px;
+  position: relative;
+  top: -220px;
+  left: 358px;
+}
+    .trabtn{
+      position: relative;
+      top: -695px;
+      left: 246px;
+      color: #00c73b;
+      width: 660px;
+    }
+.dashbtn{
+  position: relative;
+  top: -831px;
+  left: 246px;
+  color: #00c73b;
+  font-size: 93px;
+  width: 662px;
+}
+    .paybtn{
+      position: relative;
+      top: -250px;
+      left: 56px;
+      color: #00c73b;
+      font-size: 93px;
+      width: 662px;
+    }
+    .paybtn1{
+      position: relative;
+      top: -254px;
+      left: 205px;
+      color: #00c73b;
+      font-size: 93px;
+      width: 662px;
+    }
+    .paybtn2{
+      position: relative;
+      top: -254px;
+      left: 337px;
+      color: #00c73b;
+      font-size: 93px;
+      width: 662px;
+    }
+    .tradebtn{
+      position: relative;
+      top: -837px;
+      left: 194px;
+      color: #00c73b;
+      font-size: 93px;
+      width: 662px;
+    }
+
+  }
+}

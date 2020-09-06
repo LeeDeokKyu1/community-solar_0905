@@ -1,0 +1,70 @@
+default: &default
+  facebook_api_url: 'https://graph.facebook.com'
+  kakao_api_url: 'https://kapi.kakao.com'
+  naver_api_url: 'https://openapi.naver.com'
+  google_api_url: 'https://oauth2.googleapis.com'
+  aws_mail:
+    server: 'email-smtp.us-west-2.amazonaws.com'
+    username: 'AKIA4KFPPIVAYE5DQKYI'
+    password: 'BHr3Z8iEYNA+m2sPVgDXVj4Ko16yVWBLduvsnC5kgr21'
+  social:
+    kakaoKey: 'e5d202fca4e87a85631146db398a689a'
+    facebookAppId: "440930313176039"
+  quintype:
+    host: 'https://themiilk.quintype.io'
+    image_host: "https://images.assettype.com"
+  summary_api:
+    host: 'https://aylien-text.p.rapidapi.com'
+    x_host: 'aylien-text.p.rapidapi.com'
+    api_key: '496a2bb76emsha4449b69709fcadp11188cjsn8728cf0da4d2'
+  stock_api:
+    host: 'https://apidojo-yahoo-finance-v1.p.rapidapi.com'
+    x_host: 'apidojo-yahoo-finance-v1.p.rapidapi.com'
+    api_key: '496a2bb76emsha4449b69709fcadp11188cjsn8728cf0da4d2'
+  google:
+    api_key: 'AIzaSyCnAe2MGPDB0Sor7IKDYA-Y3Zj5kgJ4HVQ'
+    translate_host: 'https://translation.googleapis.com'
+    translate_project_id: 'miilk-translation-dev'
+  youtube:
+    api_key: 'AIzaSyDlenuTseZgEweIBewZUyHmJ0GouZDojGE'
+    api_url: 'https://www.googleapis.com'
+  stripe:
+    publisable_api_key: 'pk_live_uZFyUBPwDjcvgG50NH7T8STY00CGX3T7sn'
+    api_key: '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'
+  logstash:
+    type: 'tcp'
+    host: 'ec2-54-180-25-202.ap-northeast-2.compute.amazonaws.com'
+    port: 9000
+    ssl: false
+    sync: true
+  request_log:
+    host: 'https://search-production-es-5uzmymzirfbt6kezoaoo465bau.ap-northeast-2.es.amazonaws.com'
+    port: 443
+  elasticsearch:
+    host: 'https://search-production-es-5uzmymzirfbt6kezoaoo465bau.ap-northeast-2.es.amazonaws.com'
+    port: 443
+
+
+development:
+  <<: *default
+  quintype:
+    host: 'https://themiilk.quintype.io'
+    image_host: "https://images.assettype.com"
+#    host: 'https://themiilk.qtstage.io'
+#    image_host: "https://thumbor-stg.assettype.com"
+
+alpha:
+  <<: *default
+
+beta:
+  <<: *default
+
+production:
+  <<: *default
+  rabbit_mq:
+    host: ec2-13-209-161-119.ap-northeast-2.compute.amazonaws.com
+    port: 5672
+    user: volo
+    pass: volo
+  api:
+    host: https://new-api.withvolo.com

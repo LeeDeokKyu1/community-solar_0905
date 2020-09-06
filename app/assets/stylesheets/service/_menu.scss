@@ -1,0 +1,205 @@
+@import "../lib/util";
+
+.menu-container {
+  display: block;
+  border-bottom: 1px solid #ddd;
+  z-index: 999999;
+
+  .container {
+    width: 1120px;
+    margin: 0 auto;
+
+    .login-wrapper {
+      margin: 40px 0;
+
+      .logo {
+        float: left;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 34px;
+
+        font-size: 30px;
+        font-weight: 700;
+        color: #222;
+      }
+
+      .u-container {
+        float: right;
+
+        .login-signup {
+          height: 34px;
+          line-height: 34px;
+          font-size: 15px;
+          font-weight: bold;
+          color: #222;
+        }
+
+        .name-container {
+          height: 34px;
+          line-height: 34px;
+          font-size: 15px;
+          font-weight: bold;
+          color: #222222;
+          float: left;
+
+          .name {
+            color: #4c5fc1;
+          }
+
+          .intro {
+          }
+        }
+
+
+        .logout {
+          height: 24px;
+          line-height: 24px;
+          font-size: 15px;
+          font-weight: bold;
+          color: #222222;
+          float: left;
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .menu-list {
+      padding: 0 0 14px;
+      height: 47px;
+      line-height: 47px;
+      width: 1120px;
+
+      .menu {
+        float: left;
+        font-size: 15px;
+        letter-spacing: 1px;
+        margin: 0 50px 0 0;
+        font-weight: 700;
+
+        a {
+          color: #222;
+        }
+      }
+
+      .menu-search {
+        float: right;
+
+        .search-input-container {
+          display: none;
+          width: 280px;
+          float: left;
+
+          .search-inp {
+            padding: 9px 16px 10px;
+            height: 26px;
+            width: 246px;
+            line-height: 26px;
+            border: solid 1px rgba(0, 0, 0, 0.1);
+            background-color: #f2f2f2;
+          }
+        }
+
+        .search-btn {
+          margin: 7px 0 0 10px;
+          width: 30px;
+          height: 30px;
+          background-image: image-url('service/commons/ico-gnb-search.svg');
+          background-size: contain;
+          background-repeat: no-repeat;
+          cursor: pointer;
+          float: left;
+        }
+      }
+    }
+  }
+
+
+  @include respond-to(mobile) {
+    display: none;
+    padding: 9.375vw;
+    width: 65.625vw;
+    float: left;
+    background-color: #f2f2f2;
+    height: 100vh;
+    .container {
+      .login-wrapper {
+        height: 6.875vw;
+        line-height: 6.875vw;
+        margin: 6.25vw 0;
+
+        .logo {
+          display: none;
+        }
+
+        .u-container {
+          float: unset;
+        }
+
+        .login-signup {
+          font-size: 4.0625vw;
+          font-weight: bold;
+          color: #222222;
+        }
+
+        .sp {
+          margin: 0 2.5vw;
+          color: #666;
+        }
+
+        .name-container {
+          float: left;
+          height: 6.875vw;
+          line-height: 6.875vw;
+          font-size: 4.0625vw;
+          font-weight: bold;
+          color: #222;
+
+          .name {
+            color: #4c5fc1;
+            border-bottom: 2px solid #4c5fc1;
+          }
+        }
+
+        .my {
+          float: right;
+          height: 3.75vw;
+          line-height: 3.75vw;
+          font-size: 2.5vw;
+          font-weight: bold;
+          text-align: right;
+          color: #666;
+          margin-top: 1.5625vw;
+
+          &:after {
+            content: '';
+            height: 3.75vw;
+            width: 3.75vw;
+            display: block;
+            background-image: image-url('service/data_rooms/ico-more.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            float: right;
+            margin: 0 0 0 0.625vw;
+          }
+        }
+      }
+
+      .menu-list {
+        margin-top: 9.375vw;
+
+        .menu {
+          margin: 6.25vw 0;
+          height: 5.9375vw;
+          line-height: 5.9375vw;
+          font-size: 4.6875vw;
+          font-weight: bold;
+          float: unset;
+
+          a {
+            color: #222;
+          }
+        }
+      }
+    }
+  }
+}

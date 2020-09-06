@@ -1,0 +1,32 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  database: community_solar_development
+  host: alpha.crsohsmeuhva.ap-northeast-2.rds.amazonaws.com
+  username: devteam
+  password: developers
+  pool: 5
+
+development: &development
+  <<: *default
+
+alpha: &alpha
+  <<: *default
+
+beta: &beta
+  <<: *default
+  database: themiilk_production
+  host: themiilk-production.crsohsmeuhva.ap-northeast-2.rds.amazonaws.com
+  username: postgres
+  passowrd: developers
+
+test: &test
+  <<: *default
+  database: themiilk_test
+
+production:
+  <<: *beta
+#  host: dogtv-production.crsohsmeuhva.ap-northeast-2.rds.amazonaws.com
+#  database: dogtv_production
+#  username: dogtv
+#  password: ehrmxlql1!
